@@ -1,0 +1,11 @@
+/*
+ *= require_self
+ *= require foundation
+ *= require_tree .
+*/
+
+.row.border {
+	margin-top:15px;
+	padding-top:20px;
+	border-top:1px solid #ccc;
+}

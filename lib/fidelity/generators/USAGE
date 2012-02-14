@@ -1,0 +1,9 @@
+Description:
+    Setup Fidelity assets on your website
+
+Example:
+  rails g fidelity:install
+  
+  This will replace the default application assets:
+    /app/assets/javascripts/application.js
+    /app/assets/stylesheets/application.css
