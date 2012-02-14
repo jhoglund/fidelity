@@ -22,6 +22,7 @@ How to use
 -----
 
 Below is a brief example of how to use the DSL (the example is a HAML template so don't forget to include the haml gem in your Gemfile to make the example work ). 
+
 ```ruby
 	= fidelity_for(:width => 960) do |f|
 		= f.row do
