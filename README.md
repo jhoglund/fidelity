@@ -8,9 +8,10 @@ This is still in alpha and under development. But to test clone this rails engin
 
 		git clone@github.com/jhoglund/fidelity.git
 
-And link to in from gem to your Gemfile in your Ruby on Rails 3.2 application:
+Link to in from gem to your Gemfile in your Ruby on Rails 3.2 application and add the 'zurb-foundation' gem:
 
     gem "fidelity", :path => 'path/to/the/git/repository'
+		gem 'zurb-foundation'
 
 Once you have it installed you need to run inside the rails applications root directory:
 		
@@ -20,7 +21,7 @@ Once you have it installed you need to run inside the rails applications root di
 How to use
 -----
 
-Below is a brief example of how to use the DSL (using HAML syntax). 
+Below is a brief example of how to use the DSL (the example is a HAML template so don't forget to include the haml gem in your Gemfile to make the example work ). 
 ```ruby
 	= fidelity_for(:width => 960) do |f|
 		= f.row do
@@ -45,14 +46,14 @@ Below is a brief example of how to use the DSL (using HAML syntax).
 
 The gem also allows for adding pages for prototyping without the need to create routes or controller. To do so, add a `fidelity` directory in your `app/views` directory and add an index file ('index.html.erb'). That page will be the root of your app. You can add deeper structures by adding nested folders with index files in them. Like this:
 
-		rails_app
-			app
-				views
-					fidelity
+		rails_app/
+			app/
+				views/
+					fidelity/
 						index.html.erb # localhost:3000
-						users
+						users/
 							index.html.erb # localhost:3000/users
-							user
+							user/
 								index.html.erb # localhost:3000/users/user
 							
 Any concurring route added to the routes file of the rails application will overwrite the structure created by the Fidelity gem.
