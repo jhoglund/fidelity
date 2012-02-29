@@ -1,0 +1,8 @@
+<dl class="sub-nav">
+  <%- if subnav.title -%>
+	<dt><%= subnav.read_title %></dt>
+	<%- end -%>
+  <%- subnav.each do |item| %>
+	<dd class="<%= fidelity_helper.class_name_if?(item.state, 'active') %>"><a href="#"><%= item.label %></a></dd>
+	<%- end %>
+</dl>

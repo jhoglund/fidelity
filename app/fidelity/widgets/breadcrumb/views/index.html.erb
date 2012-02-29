@@ -1,0 +1,7 @@
+<ul class="breadcrumbs">
+	<% breadcrumb.each do |item| %>
+	<li class="<%= fidelity_helper.class_name_if?(item.current?, 'current') %> <%= fidelity_helper.class_name_if?(item.unavailable?, 'unavailable') %>"><%- if item.content -%>
+		<%= item.content %>
+		<%- else -%><a href="<%= item.path %>"><%= item.label %></a><%- end -%></li>
+	<% end %>
+</ul>

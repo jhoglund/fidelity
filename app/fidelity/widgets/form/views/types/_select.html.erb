@@ -1,0 +1,18 @@
+<% selected_index = options.delete(:checked) %>
+<%= form_field_with_error(options) do %>
+<%= with_label(options) do |uid| %>
+<select<%= to_html_attributes(options, :id => uid ) %>>
+<% options[:collection].each_with_index do |name, i| %>
+<% 
+	attributes = { } 
+	if selected_index != false 
+		if (!selected_index and i==0) or i==selected_index
+			attributes.merge!(:selected => true)
+		end
+	end
+%>
+<option <%= to_html_attributes(options, attributes) %>><%= name %></option>
+<% end %>
+</select>
+<% end %>
+<% end %>

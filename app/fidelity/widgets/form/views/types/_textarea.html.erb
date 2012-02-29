@@ -1,0 +1,5 @@
+<%= form_field_with_error(options) do %>
+<%= with_label(options) do |id| %>
+<textarea<%= to_html_attributes(options, :placeholder, :id => id) %>><%= block %></textarea>
+<% end %>
+<% end %>

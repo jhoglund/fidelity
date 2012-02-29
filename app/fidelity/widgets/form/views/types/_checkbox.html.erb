@@ -1,0 +1,14 @@
+<% selected_indexes = options.delete(:checked) || [] %>
+<%= form_field_with_error(options) do %>
+<% options[:collection].each_with_index do |name, i| %>
+<%= with_label({:label => name}) do |uid| %>
+<% 
+	attributes = { :id => uid } 
+	if selected_indexes.include?(i)
+		attributes.merge!(:checked => true)
+	end
+%>
+<input type="checkbox"<%= to_html_attributes(options, attributes) %>>
+<% end %>
+<% end %>
+<% end %>

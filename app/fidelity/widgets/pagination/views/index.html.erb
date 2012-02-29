@@ -1,0 +1,14 @@
+<ul class="pagination">
+	<% pagination = paginate(options) %>
+  <li class="<%= fidelity_helper.class_name_if?(!pagination.back?, 'unavailable') %>"><a href="">&laquo;</a></li>
+	<% pagination.each do |item| %>
+  <li class="<%= fidelity_helper.class_name_if?(item.current?, 'current') %> <%= fidelity_helper.class_name_if?(!item.page, 'unavailable') %>">
+		<% if item.page %>
+			<a href=""><%= item.page %></a>
+		<% else %>
+			<a href="">&hellip;</a>
+		<% end %>
+	</li>
+	<% end %>
+  <li class="<%= fidelity_helper.class_name_if?(pagination.next?, 'unavailable') %>"><a href="">&raquo;</a></li>
+</ul>

@@ -44,17 +44,3 @@ Below is a brief example of how to use the DSL (the example is a HAML template s
 			= f.column(9) do
 				%p= f.widget :button, :size => 'medium', :corners => 'radius', :style => 'nice', :color => 'red', :label => 'Medium red nice looking button'
 ```
-
-The gem also allows for adding pages for prototyping without the need to create routes or controller. To do so, add a `fidelity` directory in your `app/views` directory and add an index file ('index.html.erb'). That page will be the root of your app. You can add deeper structures by adding nested folders with index files in them. Like this:
-
-		rails_app/
-			app/
-				views/
-					fidelity/
-						index.html.erb # localhost:3000
-						users/
-							index.html.erb # localhost:3000/users
-							user/
-								index.html.erb # localhost:3000/users/user
-							
-Any concurring route added to the routes file of the rails application will overwrite the structure created by the Fidelity gem.

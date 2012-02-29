@@ -1,0 +1,16 @@
+<% selected_index = options.delete(:checked) %>
+<%= form_field_with_error(options) do %>
+<% options[:collection].each_with_index do |name, i| %>
+<%= with_label({:label => name}) do |uid| %>
+<% 
+	attributes = { :id => uid } 
+	if selected_index != false 
+		if (!selected_index and i==0) or i==selected_index
+			attributes.merge!(:checked => true)
+		end
+	end
+%>
+<input type="radio"<%= to_html_attributes(options, attributes) %> name="radio_<%= options.object_id %>">
+<% end %>
+<% end %>
+<% end %>

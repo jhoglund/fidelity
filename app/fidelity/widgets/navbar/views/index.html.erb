@@ -1,0 +1,17 @@
+<ul class="nav-bar">
+	<%- navbar.each do |item| -%>
+		<%- if item.flyout? -%>
+		<li class="has-flyout">
+			<a href="#" class="main"><%= item.label %></a>
+			<a href="#" class="flyout-toggle"><span></span></a>
+			<div class="<%= fidelity_helper.to_class_name('flyout', options[:size], options[:position]) %>">
+				<%= item.content %>
+			</div>
+		</li>
+		<%- elsif item.link? -%>
+		<li><a href="#" class="main"><%= item.label %></a></li>
+		<%- else -%>
+		<li><%= item.label %></li>
+		<%- end -%>
+	<%- end -%>
+</ul>

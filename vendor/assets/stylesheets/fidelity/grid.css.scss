@@ -1,0 +1,24 @@
+.grid-canvas {
+	position:relative;
+	margin:0 auto;
+	width:960px;
+}
+.grid-row {
+	position:relative;
+	width:100%;
+	display: -webkit-box;
+}
+.grid-cell {
+	position:relative;
+	width:100px;
+	padding:0px;
+	margin:-1px 0 0 -1px;
+	-webkit-box-flex: 1;
+	& > .grid-row {
+		margin:0 0 -1px -1px;
+		padding-right:3px;
+		& > .grid-cell:last-child {
+			margin-right:-3px;
+		}
+	}
+}

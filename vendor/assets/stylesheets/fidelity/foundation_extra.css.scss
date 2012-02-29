@@ -1,0 +1,26 @@
+/*  --------------------------------------------------
+    Breadcrumbs
+		This has yet not been implemented tin the Foundation gem
+    -------------------------------------------------- */    
+ul.breadcrumbs {
+	display: block; 
+	background: #f4f4f4; 
+	padding: 7px 10px; 
+	border: 1px solid #ddd; 
+	border-radius: 2px; 
+	overflow: hidden;
+	li {
+		margin: 0; 
+		padding: 0 12px 0 0; 
+		float: left; 
+		& a, & span { text-transform: uppercase; font-size: 11px; padding-left: 12px; }
+		&:first-child a, &:first-child span { padding-left: 0; }
+		&:before { content: "/"; color: #aaa; }
+		&:first-child:before { content: ""; }
+		&.current a { cursor: default; color: #333; }
+		&:hover a, & a:focus { text-decoration: underline; }
+		&.current:hover a, &.current a:focus { text-decoration: none; }
+		&.unavailable a { color: #999; }
+	  &.unavailable:hover a, &.unavailable a:focus { text-decoration: none; color: #999; cursor: default; }
+	}
+}    
