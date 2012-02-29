@@ -1,24 +1,49 @@
-.grid-canvas {
+.grid {
 	position:relative;
 	margin:0 auto;
 	width:960px;
+	&.grid-visible .grid-column {
+		outline:1px solid #ddd;
+		outline-offset:-1px;
+	}
+	&.grid-padded .grid-column {
+		padding:20px;
+	}
 }
 .grid-row {
 	position:relative;
 	width:100%;
 	display: -webkit-box;
+	&.grid-row-border {
+		margin-top:-1px;
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+	}
+	&.grid-row-shaded {
+		background:#eee;
+	}
+	
 }
-.grid-cell {
+.grid-column {
 	position:relative;
 	width:100px;
 	padding:0px;
-	margin:-1px 0 0 -1px;
+	margin:0 0 0 -1px;
 	-webkit-box-flex: 1;
+	border:1px solid transparent;
 	& > .grid-row {
 		margin:0 0 -1px -1px;
 		padding-right:3px;
-		& > .grid-cell:last-child {
+		& > .grid-column:last-child {
 			margin-right:-3px;
 		}
 	}
+	&.grid-column-shaded {
+		background:#eee;
+	}
+	&.grid-column-border {
+		margin:-1px 0 0 -1px;
+		border-color:#ccc;
+	}
+	
 }

@@ -9,14 +9,45 @@ module Fidelity
       @widget_helpers = Fidelity::WidgetHelper.new
     end
     
-    def column size=1
-      template.content_tag('div', :class => [COLUMN_SIZE[size], 'columns'].join(' ')) do
+    def grid *args
+      options = args.extract_options!
+      classes = ['grid']
+      if args.delete(:visible) or options.delete(:visible)==true
+        classes << 'grid-visible'
+      end
+      if not options.delete(:padded)===false
+        classes << 'grid-padded'
+      end
+      template.content_tag('div', :class => classes.join(' ')) do
         yield
       end
     end
     
-    def row options={}
-      template.content_tag('div', :class => widget_helpers.to_class_name('row', options[:border] ? 'border' : nil)) do
+    def column *args
+      options = args.extract_options!
+      size = args.shift
+      classes = ['grid-column']
+      if args.delete(:border)
+        classes << 'grid-column-border'
+      end
+      if args.delete(:shaded)
+        classes << 'grid-column-shaded'
+      end
+      template.content_tag('div', :class => classes.join(' '), :style => "-webkit-box-flex:#{size}") do
+        yield
+      end
+    end
+    
+    def row *args
+      options = args.extract_options!
+      classes = ['grid-row']
+      if args.delete(:border)
+        classes << 'grid-row-border'
+      end
+      if args.delete(:shaded)
+        classes << 'grid-row-shaded'
+      end
+      template.content_tag('div', :class => classes.join(' ')) do
         yield
       end
     end
