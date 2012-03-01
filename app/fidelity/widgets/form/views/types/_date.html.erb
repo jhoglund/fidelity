@@ -1,0 +1,8 @@
+<%= form_field_with_error(options) do %>
+<%= with_label(:label => (options[:label]||'Date')) %>
+<input type="text"<%= to_html_attributes({:placeholder => (options[:placeholder]||Time.new.strftime('%Y-%m-%d'))}, :placeholder) %> class="<%= fidelity_helper.to_class_name(:small) %>">
+<a href="#" class="<%=fidelity_helper.to_class_name(options[:color], options[:style], :small, options[:corners]||:round, 'button') %>">
+	<%= fidelity_helper.select_first(block, options[:text], 'Calendar') %>
+</a>
+
+<% end %>

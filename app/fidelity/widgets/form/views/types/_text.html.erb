@@ -1,4 +1,5 @@
 <%= form_field_with_error(options) do %>
-<%= with_label(options) %>
-<input type="text"<%= to_html_attributes(options, :placeholder) %>>
+<%= with_label(options) do |uid| %>
+<input type="text"<%= to_html_attributes(options, :placeholder, :id => uid) %> class="<%= fidelity_helper.to_class_name(options[:size] || :medium) %>">
+<% end %>
 <% end %>

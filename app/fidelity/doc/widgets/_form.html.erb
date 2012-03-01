@@ -1,7 +1,7 @@
 <%= fidelity.widget(:form, :label => 'Text field', :placeholder => 'Some text') %>
 <hr>
 <%= fidelity.widget(:form, :type => :textarea, :label => 'Textarea', :placeholder => 'Some text') do  %>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
 <% end %>
 <hr>
 <%= fidelity.widget(:form, :type => :checkbox, :collection => %w(First Second Third Forth), :checked => [1,2], :label => 'Checkboxes') %>
@@ -12,3 +12,6 @@
 <hr>
 <%= fidelity.widget(:form, :label => 'Text field', :placeholder => 'Some text', :error => 'With error') %>
 <hr>
+<%= fidelity.widget(:form, :type => :date) %>
+<hr>
+<%= fidelity.widget(:form, :type => :buttonbar) %>
