@@ -1,3 +1,6 @@
+require 'rdiscount'
+require 'coderay'
+require 'zurb-foundation'
 require "fidelity/generators/install_generator"
 require 'fidelity/version'
 

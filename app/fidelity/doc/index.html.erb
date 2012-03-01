@@ -24,6 +24,8 @@
 		<% widgets.each do |k,v| %>
 			<%= render :layout => "/row", :locals => { :fidelity => fidelity, :heading => v } do %>
 				<%= render :partial => "/widgets/#{k.to_s}", :locals => { :fidelity => fidelity } %>
+				<hr>
+				<%= CodeRay.scan_file(Fidelity::Engine.root.join('app','fidelity','doc','widgets',"_#{k.to_s}.html.erb"), :erb).div(:line_numbers => :table).html_safe %>
 			<% end %>
 		<% end %>
 	<% end %>
