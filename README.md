@@ -25,12 +25,12 @@ Below is a brief example of how to use the DSL (the example is a HAML template s
 		= f.grid do
 			= f.row do
 				= f.column(3) do
-					= f.widget :heading, 'Label'
+					%h3 Label
 				= f.column(9) do
 					= f.widget :label, :content => 'This is the content of the label'
 			= f.row(:border => true) do
 				= f.column(3) do
-					= f.widget :heading, 'Alert'
+					%h3 Alert
 				= f.column(9) do
 					= f.widget(:alert, :type => :success) do
 						This is a success alert 
@@ -38,7 +38,7 @@ Below is a brief example of how to use the DSL (the example is a HAML template s
 						This is a error alert 
 			= f.row(:border => true) do
 				= f.column(3) do
-					= f.widget :heading, 'Buttons'
+					%h3 Buttons
 				= f.column(9) do
 					%p= f.widget :button, :size => 'medium', :corners => 'radius', :style => 'nice', :color => 'red', :label => 'Medium red nice looking button'
 ```
