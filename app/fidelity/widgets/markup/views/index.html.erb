@@ -1,0 +1,5 @@
+<% if RDiscount %>
+	<%= RDiscount.new(block).to_html.html_safe %>
+<% else %>
+	<pre>No markup installed</pre>
+<% end %>

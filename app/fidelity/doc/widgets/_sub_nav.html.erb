@@ -1,0 +1,14 @@
+<%= fidelity.widget(:subnav) do |s| %>
+	<%= s.title do %>
+		Filter:
+	<% end %>
+	<%= s.item do %>
+		Alphabetically
+	<% end %>
+	<%= s.item(:state => :active) do %>
+		By date
+	<% end %>
+	<%= s.item do %>
+		By relevance
+	<% end %>
+<% end %>

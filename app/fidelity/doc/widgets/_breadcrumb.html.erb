@@ -1,0 +1,9 @@
+<%= fidelity.widget(:breadcrumb) do |b| %>
+	<%= b.item('First', :state => :current, :path => 'xxx') %>
+	<%= b.item('Second', :state => :unavailable, :path => 'xxx') %>
+	<%= b.item('Third', :path => 'xxx') %>
+	<%= b.item('Fourth', :path => 'xxx') %>
+	<%= b.item('This label will not be used since we have a block') do %>
+		<span>Fifth <a href="ccc" style="margin:0 -10px">element</a></span>
+	<% end %>
+<% end %>

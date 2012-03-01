@@ -1,0 +1,31 @@
+
+<%= fidelity_for do |fidelity| %>
+	<%		
+		widgets = {
+			:form => 'Form',
+			:table => 'Table',
+			:breadcrumb => 'Breadcrumb',
+			:pagination => 'Pagination',
+			:panel => 'Panel',
+			:sub_nav => 'Sub nav',
+			:navbar => 'Navbar',
+			:tabs_contained => 'Tabs (contained)',
+			:tabs_open => 'Tabs (open)',
+			:tabs_nice => 'Nice tabs',
+			:tabs_vertical => 'Vertical tabs',
+			:labels => 'Labels',
+			:tooltip => 'Tooltip',
+			:alerts => 'Alerts',
+			:buttons => 'Buttons'
+		}
+	%>
+	
+	<%= fidelity.grid(:visible => false) do %>
+		<% widgets.each do |k,v| %>
+			<%= render :layout => "/row", :locals => { :fidelity => fidelity, :heading => v } do %>
+				<%= render :partial => "/widgets/#{k.to_s}", :locals => { :fidelity => fidelity } %>
+			<% end %>
+		<% end %>
+	<% end %>
+	
+<% end %>

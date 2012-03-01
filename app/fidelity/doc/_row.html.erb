@@ -1,0 +1,8 @@
+<%= fidelity.row(:border) do %>
+	<%= fidelity.column(3, :shaded) do %>
+		<h3 class="doc-label"><%= heading %></h3>
+	<% end %>
+	<%= fidelity.column(9) do %>
+		<%= yield %>
+	<% end %>
+<% end %>
