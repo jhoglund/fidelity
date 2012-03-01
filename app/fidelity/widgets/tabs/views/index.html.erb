@@ -7,7 +7,7 @@
 <% unless tabs.vertical %>
 <ul class="<%= fidelity_helper.to_class_name('tabs-content', options[:style], options[:outline], options[:orientation]) %>">
   <%- tabs.each do |tab| %>
-	<li class="<%= fidelity_helper.class_name_if?(tab.state, 'active') %>" id="tab<%= tab.object_id %>"><%= tab.panel %></li>
+	<li class="<%= fidelity_helper.class_name_if?(tab.state, 'active') %>" id="tab<%= tab.object_id %>Tab"><%= tab.panel %></li>
 	<%- end %>
 </ul>
 <% end %>

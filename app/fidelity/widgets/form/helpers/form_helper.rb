@@ -31,7 +31,7 @@ module Fidelity
           end
           content_tag(:div, content, :class => 'form-field error')
         else
-          content_tag(:div, :class => 'form-field') do
+          content_tag(:span) do
             yield
           end
         end
