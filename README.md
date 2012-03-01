@@ -10,7 +10,7 @@ This is still in alpha and under development. To install add the gem to your Gem
 
 Once you have it installed you need to run inside the rails applications root directory:
 		
-		rails g fidelity:install
+    rails g fidelity:install
 		
 		
 How to use
