@@ -1,13 +1,13 @@
 <dl class="<%= fidelity_helper.to_class_name('tabs', options[:style], options[:outline], options[:orientation]) %>">
   <%- tabs.each do |tab| %>
-	<dd><a href="#tab<%= tab.object_id %>" class="<%= fidelity_helper.class_name_if?(tab.state, 'active') %>"><%= tab.label %></a></dd>
+	<dd><a href="#<%= tab.id %>" class="<%= fidelity_helper.class_name_if?(tab.state, 'active') %>"><%= tab.label %></a></dd>
 	<%- end %>
 </dl>
 
 <% unless tabs.vertical %>
 <ul class="<%= fidelity_helper.to_class_name('tabs-content', options[:style], options[:outline], options[:orientation]) %>">
   <%- tabs.each do |tab| %>
-	<li class="<%= fidelity_helper.class_name_if?(tab.state, 'active') %>" id="tab<%= tab.object_id %>Tab"><%= tab.panel %></li>
+	<li class="<%= fidelity_helper.class_name_if?(tab.state, 'active') %>" id="<%= tab.id %>Tab"><%= tab.panel %></li>
 	<%- end %>
 </ul>
 <% end %>

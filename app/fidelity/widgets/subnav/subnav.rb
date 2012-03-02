@@ -12,7 +12,7 @@ module Fidelity
         label = Proc.new{ options[:text] }
         label = template.capture(&block) if block_given?
         state = :active if options[:state]
-        @items << Item.new(label, state)
+        @items << Item.new(label, state, options[:path])
       end
   
       def each
@@ -24,10 +24,11 @@ module Fidelity
       private
       
       class Item
-        attr_accessor :label, :state
-        def initialize label='Item', state=nil
+        attr_accessor :label, :state, :path
+        def initialize label='Item', state=nil, path='#'
           @label = label
           @state = state
+          @path = path
         end
       end      
       

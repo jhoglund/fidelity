@@ -1,0 +1,8 @@
+a.close, a.toggle { 
+	color: #000; font-size: 18px; opacity: 0.2; padding: 4px; 
+	&:hover, &:focus { opacity: 0.4; }
+}
+a.toggle { 
+	opacity: 0.6;
+}
+

@@ -32,16 +32,17 @@ module Fidelity
       def navbar_item type=:default, options={}, &block
         label = options[:text] || options[:label]
         content = block_given? ? template.capture(&block) : ''
-        @items << Item.new(type, label, content)
+        @items << Item.new(type, label, content, options[:path])
         ''
       end
             
       class Item
-        attr_accessor :type, :label, :content
-        def initialize type=:default, label='Item', content=''
+        attr_accessor :type, :label, :content, :path
+        def initialize type=:default, label='Item', content='', path='#'
           @type = type
           @label = label || content
           @content = content
+          @path = path
         end
         
         def item?

@@ -8,6 +8,9 @@
 	}
 	&.grid-padded .grid-column {
 		padding:20px;
+		& .grid-column {
+			padding:0;
+		}
 	}
 }
 .grid-row {
@@ -45,5 +48,6 @@
 		margin:-1px 0 0 -1px;
 		border-color:#ccc;
 	}
-	
+	&.grid-column-bottom {
+	}
 }

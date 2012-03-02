@@ -13,7 +13,7 @@ module Fidelity
         panel = Proc.new{ options[:text] }
         panel = template.capture(&block) if block_given?
         state = :active if options[:state]
-        @tabs << TabPanel.new(label, panel, state)
+        @tabs << TabPanel.new(label, panel, state, options[:id])
       end
   
       def each
@@ -24,10 +24,15 @@ module Fidelity
       
       class TabPanel
         attr_accessor :label, :panel, :state
-        def initialize label='Tab', panel='', state=nil
+        def initialize label='Tab', panel='', state=nil, id=nil
           @label = label
           @panel = panel
           @state = state
+          @id = id
+        end
+        
+        def id
+          @id || self.object_id
         end
       end
       

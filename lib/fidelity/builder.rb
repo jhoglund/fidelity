@@ -25,7 +25,7 @@ module Fidelity
     
     def column *args
       options = args.extract_options!
-      size = args.shift
+      size = Fixnum===args.first ? args.shift : 1 
       classes = ['grid-column']
       if args.delete(:border)
         classes << 'grid-column-border'
@@ -33,6 +33,13 @@ module Fidelity
       if args.delete(:shaded)
         classes << 'grid-column-shaded'
       end
+      if args.delete(:flush)
+        classes << 'grid-column-flushed'
+      end
+      if args.delete(:bottom)
+        classes << 'grid-column-bottom'
+      end
+
       template.content_tag('div', :class => classes.join(' '), :style => "-webkit-box-flex:#{size}") do
         yield
       end
