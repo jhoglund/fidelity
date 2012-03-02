@@ -1,7 +1,7 @@
 <% selected_index = options.delete(:checked) %>
 <%= form_field_with_error(options) do %>
 <%= with_label(options) do |uid| %>
-<select<%= to_html_attributes(options, :id => uid ) %>>
+<select<%= to_html_attributes(options, :id => uid ) %><%= to_html_attributes(:class => 'inline' ) if options.delete(:inline_label) %>>
 <% options[:collection].each_with_index do |name, i| %>
 <% 
 	attributes = { } 

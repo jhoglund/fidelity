@@ -4,7 +4,9 @@ module Fidelity
     def with_label options={}, &block
       uid = "uid_#{options.object_id}"
       label = if options[:label]
-        content_tag(:label, options[:label], :for => uid)
+        label_options = { :for => uid }
+        label_options.merge!({:class => 'inline'}) if options[:inline_label]
+        content_tag(:label, options[:label], label_options)
       else
         ''
       end
